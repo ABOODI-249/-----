@@ -6,6 +6,9 @@ const pm2 = require("pm2");
 const { fork } = require("child_process");
 let mergedCommands = ["exec", "run", "html", "gethtml"];
 
+// هنا بدل اسم البوت
+let DARK_LEGEND_100 = Atlas;
+
 module.exports = {
   name: "coderunner",
   alias: [...mergedCommands],
@@ -68,9 +71,6 @@ module.exports = {
           );
         }
 
-        // if (!text.includes("http") && !text.includes("https")) {
-        //   return m.reply(`Website must start with *http* or *https*`);
-        // }
         await doReact("🔰");
         try {
           target = text;
@@ -109,7 +109,7 @@ module.exports = {
                     const mainfile = fs.readFileSync(
                       `./System/Cache/${hostname}.html`
                     );
-                    Atlas.sendMessage(
+                    DARK_LEGEND_100.sendMessage(
                       m.from,
                       {
                         document: mainfile,
@@ -165,7 +165,7 @@ module.exports = {
                     const mainfile = fs.readFileSync(
                       `./System/Cache/${hostname}.txt`
                     );
-                    Atlas.sendMessage(
+                    DARK_LEGEND_100.sendMessage(
                       m.from,
                       {
                         document: mainfile,
